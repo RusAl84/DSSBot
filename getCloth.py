@@ -2,7 +2,7 @@
 from getKeywords import getKeywords 
 import random
 
-def genQoute(str1):
+def getCloth(str1):
     fileObject = open("data3.json", "r", encoding="UTF-8")
     jsonContent = fileObject.read()
     aList = json.loads(jsonContent)
@@ -33,9 +33,9 @@ def genQoute(str1):
 
 
 if __name__ == '__main__':
-    str1="Леша Носков с пистолетом лучше всех"
+    str1="Тонкий хороший"
     # str1="теоретическая и практическая значимость работы  конкретика в постановке цели и задач  "
-    str2 =genQoute(str1)
+    str2 =getCloth(str1)
     print(str2)
 
 

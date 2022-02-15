@@ -1,7 +1,7 @@
 ﻿
 from webbrowser import get
 import telebot;
-from genQoute import genQoute 
+from getCloth import genQoute 
 
 bot = telebot.TeleBot('5111904045:AAH8lmA1lzmM5vdK4RlR8v4cv8YudP1OhGM');
 
@@ -10,16 +10,16 @@ bot = telebot.TeleBot('5111904045:AAH8lmA1lzmM5vdK4RlR8v4cv8YudP1OhGM');
 def get_text_messages(message):
     splitted_text = str(message.text).lower().split()
     if str(message.text).lower() == "привет":
-        bot.send_message(message.from_user.id, "Привет, чем я могу тебе помочь? Для информации введите /help.")
+        bot.send_message(message.from_user.id, "Привет это интеллектуальный Бот по подбору ткани для штор, чем я могу тебе помочь? Для информации введите /help.")
     elif str(message.text).lower() == "/help":
-        bot.send_message(message.from_user.id, "Список команд: /q - текст для анализа  - Подобрать цитату ")
-    elif splitted_text[0] == "/q":
+        bot.send_message(message.from_user.id, "Интллектуальный Бот по подбору ткани для штор. \n Список команд: \n /n - текст для анализа  - Положительные строны материала \n /p - текст для анализа  - Отрицательные строны материала \n /s - список всех тканей с описанием")
+    elif splitted_text[0] == "/p":
         str1=""
         for item in splitted_text:
-            if item!="\q":
+            if item!="/p":
                 str1+=" " + item
-        bot.send_message(message.from_user.id, genQoute(str1))
+        bot.send_message(message.from_user.id, getCloth(str1))
     else:
-        bot.send_message(message.from_user.id, "Для информации введите /help.")
+        bot.send_message(message.from_user.id, "Привет интеллектуальный Бот по подбору ткани для штор, чем я могу тебе помочь? Для информации введите /help.")
 
 bot.polling(none_stop=True, interval=0)
