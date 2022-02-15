@@ -1,9 +1,9 @@
 ﻿
 from webbrowser import get
 import telebot;
-from getCloth import genQoute 
+from getCloth import getCloth 
 
-bot = telebot.TeleBot('5111904045:AAH8lmA1lzmM5vdK4RlR8v4cv8YudP1OhGM');
+bot = telebot.TeleBot('5111904045:AAEDPZLqKaacz7BFQV9Aohjj-5gmjEmoUCA');
 
 
 @bot.message_handler(content_types=['text'])

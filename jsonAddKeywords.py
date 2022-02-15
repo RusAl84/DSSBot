@@ -26,11 +26,23 @@ aList = json.loads(jsonContent)
 
 nList=[]
 for item in aList:
-    str1=item['text']
-    # str1="Две вещи наполняют разум всё возрастающим удивлением и трепетом, чем чаще и интенсивнее к ним обращается ум мысли: звёздное небо надо мной и моральный закон внутри меня."
+    str1=item['positive']
     keywords=getKeywords(str1)
     # print(keywords)
-    item['keywords'] = keywords
+    item['pkeywords'] = keywords
+    nList.append(item)
+
+jsonString = json.dumps(nList, ensure_ascii=False)
+jsonFile = open("data3.json", "w", encoding="UTF-8")
+jsonFile.write(jsonString)
+jsonFile.close()
+
+nList=[]
+for item in aList:
+    str1=item['negative']
+    keywords=getKeywords(str1)
+    # print(keywords)
+    item['nkeywords'] = keywords
     nList.append(item)
 
 jsonString = json.dumps(nList, ensure_ascii=False)

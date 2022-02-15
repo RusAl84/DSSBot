@@ -12,7 +12,7 @@ def getCloth(str1):
     cSet=set()
     for item in aList:
         countIntersections=0
-        keywords2=item['keywords']
+        keywords2=item['pkeywords']
         for i1 in keywords1:
             for i2 in keywords2:
                 if i1==i2:
@@ -27,7 +27,7 @@ def getCloth(str1):
             qList.append(item)
             # print(item['text'])
     # return qList
-    str2=qList[random.randrange(len(qList))]['text']
+    str2=qList
     return str2
     # print(qList)
 

@@ -20,7 +20,7 @@ def getKeywords(str1):
 if __name__ == '__main__':
     nltk.download('stopwords')
     nltk.download('punkt')
-    str1="Леша нежный и не съел ёжика"
+    str1="тонкий"
     mas=getKeywords(str1)
     print(mas)
 
